@@ -14,6 +14,8 @@
             android:id="@+id/nav_group"
             android:icon="@drawable/ic_group"
             android:title="Power  Group" />
+
+
         <item
             android:id="@+id/nav_rush"
             android:icon="@drawable/ic_flag"
@@ -22,10 +24,7 @@
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_setting"
             android:title="Setting" />
-        <item
-            android:id="@+id/nav_notification"
-            android:icon="@drawable/ic_notifications"
-            android:title="Notification" />
+
     </group>
 
 

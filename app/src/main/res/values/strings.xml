@@ -17,5 +17,11 @@
     <string name="sortType">Sort By Type</string>
     <string name="change">Change</string>
     <string name="filterDescript">Choose the events order</string>
+<<<<<<< Updated upstream
     <string name="calerdar">Power Calendar</string>
+=======
+    <string name="basic">Basic</string>
+    <string name="challengDes">Challenges for beginners. Let\'s Run!</string>
+    <string name="enter">ENTER</string>
+>>>>>>> Stashed changes
 </resources>

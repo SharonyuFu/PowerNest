@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">PowerRun</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="pass">Password</string>
+    <string name="forgetPass">Forget  Your  Password?</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="location">Location</string>
+    <string name="detail">Detail</string>
+    <string name="join">Join</string>
+    <string name="sortRegion">Sort By Time</string>
+    <string name="sortType">Sort By Type</string>
+    <string name="change">Change</string>
+    <string name="filterDescript">Choose the events order</string>
+</resources>

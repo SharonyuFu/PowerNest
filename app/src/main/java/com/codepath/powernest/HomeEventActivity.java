@@ -127,9 +127,13 @@ public class HomeEventActivity extends AppCompatActivity {
                 Intent j = new Intent(this,CalendarActivity.class);
                 startActivity(j);
                 break;
-            case R.id.nav_group:
-                Intent jo = new Intent (this,PowerGroupActivity.class);
+            case R.id.nav_group_manager:
+                Intent jo = new Intent(this,PowerGroupActivity.class);
                 startActivity(jo);
+                break;
+            case R.id.nav_liked_group:
+                Intent jot = new Intent(this,LikedGroupActivity.class);
+                startActivity(jot);
                 break;
             case R.id.nav_rush:
                 Intent in = new Intent(this,PowerRushActivity.class);

@@ -22,10 +22,13 @@
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".SearchOnMapActivity" />
         <activity android:name=".PowerRushActivity" />
+
+
         <activity android:name=".PowerGroupActivity" />
         <activity android:name=".GropuDetailActivity" />
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".LikedGroupActivity"></activity>
+
     </application>
 
 </manifest>

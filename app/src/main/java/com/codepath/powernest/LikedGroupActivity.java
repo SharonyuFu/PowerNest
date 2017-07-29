@@ -1,48 +1,68 @@
 package com.codepath.powernest;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.CalendarView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
-import com.astuetz.PagerSlidingTabStrip;
-import com.codepath.powernest.fragment.StarClubFragment;
+import com.codepath.powernest.adapter.ClubAdapter;
+import com.codepath.powernest.adapter.LikedClubAdapter;
+import com.codepath.powernest.model.Club;
 
-public class CalendarActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class LikedGroupActivity extends AppCompatActivity {
 
     private Toolbar toolbar;
-    private CalendarView cdView;
-    ViewPager vpPager;
+
+    private ListView lvPowerGroup;
+    private List<Club> clubs = new ArrayList<>();
     private DrawerLayout drawerLayout;
     private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendar);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setContentView(R.layout.activity_liked_group);
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.calerdar);
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        vpPager = (ViewPager) findViewById(R.id.vpPager_cal);
-        vpPager.setAdapter(new EventsPageAdapter(getSupportFragmentManager()));
-        PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        tabsStrip.setViewPager(vpPager);
+        // Construct the data source
+//        ArrayList<Club> arrayOfClubs = new ArrayList<Club>();
+
+        clubs = Club.getClubs();
+        // Create the adapter to convert the array to views
+        LikedClubAdapter adapter = new LikedClubAdapter(this, clubs);
+
+
+        lvPowerGroup = (ListView)findViewById(R.id.lvPowerGroup);
+        lvPowerGroup.setAdapter(adapter);
+
+
+        getSupportActionBar().setTitle("Liked Group");
+
+
+        lvPowerGroup.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                Toast.makeText(getApplicationContext(),"TEST",Toast.LENGTH_SHORT).show();
+                Intent g = new Intent(getApplicationContext(), GropuDetailActivity.class);
+                startActivity(g);
+
+            }
+        });
 
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -53,7 +73,6 @@ public class CalendarActivity extends AppCompatActivity {
 
         setupDrawerContent(nvDrawer);
 
-
     }
 
     @Override
@@ -62,6 +81,7 @@ public class CalendarActivity extends AppCompatActivity {
         // Sync the toggle state after onRestoreInstanceState has occurred.
         drawerToggle.syncState();
     }
+
     private void setupDrawerContent(NavigationView navigationView) {
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
@@ -75,7 +95,6 @@ public class CalendarActivity extends AppCompatActivity {
 
     public void selectDrawerItem(MenuItem menuItem) {
         // Create a new fragment and specify the fragment to show based on nav item clicked
-
         switch(menuItem.getItemId()) {
 
             case R.id.nav_lobby:
@@ -91,7 +110,7 @@ public class CalendarActivity extends AppCompatActivity {
                 startActivity(jo);
                 break;
             case R.id.nav_liked_group:
-                Intent jot = new Intent(this,PowerGroupActivity.class);
+                Intent jot = new Intent(this,LikedGroupActivity.class);
                 startActivity(jot);
                 break;
             case R.id.nav_rush:
@@ -108,41 +127,7 @@ public class CalendarActivity extends AppCompatActivity {
 
 
 
-    private class EventsPageAdapter extends FragmentPagerAdapter {
-        private String tabTitle[] =  new String[]{"Your Group","All Group"};
 
-        public EventsPageAdapter (FragmentManager fragmentManager) {
-            super(fragmentManager);
-        }
 
-        @Override
-        public Fragment getItem(int position) {
-            if (position == 0){
-                StarClubFragment strFragment = new StarClubFragment();
-                return strFragment;
-            }else{
-                StarClubFragment strFragment = new StarClubFragment();
-                return strFragment; //now is using the same page to present
-            }
-        }
 
-        @Override
-        public int getCount() {
-            return tabTitle.length;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            // Generate title based on item position
-            return tabTitle[position];
-        }
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_calendar, menu);
-        return true;
-    }
 }

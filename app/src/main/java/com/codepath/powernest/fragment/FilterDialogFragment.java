@@ -6,6 +6,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RadioButton;
 
 import com.codepath.powernest.R;
@@ -15,6 +16,7 @@ public class FilterDialogFragment extends DialogFragment {
     private RadioButton radioType;
     private RadioButton radioTime;
     private RadioButton radioDistan;
+    private Button btFilter;
 
     public FilterDialogFragment() {
 
@@ -43,8 +45,16 @@ public class FilterDialogFragment extends DialogFragment {
         radioTime = (RadioButton) view.findViewById(R.id.radioButton);
         radioType = (RadioButton) view.findViewById(R.id.radioButton2);
         radioDistan = (RadioButton) view.findViewById(R.id.radioButton3);
+        btFilter = (Button) view.findViewById(R.id.btFilter);
 
+        btFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
 
     }
+
 
 }

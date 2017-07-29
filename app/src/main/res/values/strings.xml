@@ -13,10 +13,10 @@
     <string name="location">Location</string>
     <string name="detail">Detail</string>
     <string name="join">Join</string>
-    <string name="sortRegion">Sort By Time</string>
+    <string name="sortRegion">Sort By Region</string>
     <string name="sortType">Sort By Type</string>
     <string name="change">Change</string>
-    <string name="filterDescript">Choose the events order</string>
+    <string name="filterDescript">Filter</string>
     <string name="calerdar">Power Calendar</string>
     <string name="basic">Basic</string>
     <string name="challengDes">Challenges for beginners. Let\'s Run!</string>

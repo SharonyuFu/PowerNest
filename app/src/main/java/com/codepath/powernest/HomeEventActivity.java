@@ -1,7 +1,6 @@
 package com.codepath.powernest;
 
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -12,9 +11,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
@@ -161,8 +160,10 @@ public class HomeEventActivity extends AppCompatActivity {
     }
 
     public void filter(MenuItem v){
-        Intent i = new Intent(this,SearchOnMapActivity.class);
-        startActivity(i);
+        showFilterDialog();
+
+//        Intent i = new Intent(this,SearchOnMapActivity.class);
+//        startActivity(i);
 
     }
 
@@ -175,6 +176,14 @@ public class HomeEventActivity extends AppCompatActivity {
 
     public boolean showDialog(){
         return true;
+    }
+
+    public void Profile(View view) {
+        Intent p = new Intent (this,ProfileActivity.class);
+        startActivity(p);
+
+//        Toast.makeText(getApplicationContext(),"Test",Toast.LENGTH_LONG).show();
+
     }
 
 

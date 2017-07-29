@@ -45,7 +45,7 @@
         android:text="@string/sortRegion" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btFilter"
         android:background="@drawable/rounded_button_fourcorner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

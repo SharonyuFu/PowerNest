@@ -12,6 +12,7 @@
         android:id="@+id/mFilter"
         android:icon="@drawable/ic_filter"
         app:showAsAction="ifRoom|withText"
+        android:onClick="filter"
         android:title="Filter">
     </item>
 

@@ -12,8 +12,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.powernest.fragment.FilterDialogFragment;
@@ -38,24 +40,20 @@ public class HomeEventActivity extends AppCompatActivity {
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
                 R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(drawerToggle);
 
-
         setupDrawerContent(nvDrawer);
-
 
         getSupportActionBar().setTitle("Power Lobby");
         vpPager = (ViewPager) findViewById(R.id.vpPager);
         vpPager.setAdapter(new EventsPageAdapter(getSupportFragmentManager()));
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabsStrip.setViewPager(vpPager);
-
-
-
 
 
     }
@@ -97,12 +95,12 @@ public class HomeEventActivity extends AppCompatActivity {
         drawerToggle.syncState();
     }
 
-    @Override
+    /*@Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         // Pass any configuration change to the drawer toggles
         drawerToggle.onConfigurationChanged(newConfig);
-    }
+    }*/
 
 
 
@@ -119,31 +117,36 @@ public class HomeEventActivity extends AppCompatActivity {
 
     public void selectDrawerItem(MenuItem menuItem) {
         // Create a new fragment and specify the fragment to show based on nav item clicked
-        Fragment fragment = null;
-        Class fragmentClass;
+
         switch(menuItem.getItemId()) {
+
             case R.id.nav_lobby:
-                fragmentClass = HomeEventActivity.class;
+                Intent i = new Intent(getApplicationContext(),HomeEventActivity.class);
+                startActivity(i);
                 break;
             case R.id.nav_calendar:
-                fragmentClass = HomeEventActivity.class;
+                Intent j = new Intent(this,CalendarActivity.class);
+                startActivity(j);
                 break;
             case R.id.nav_group:
                 fragmentClass = PowerGroupActivity.class;
-
+                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_rush:
-                fragmentClass = HomeEventActivity.class;
+                Intent in = new Intent(this,PowerRushActivity.class);
+                startActivity(in);
                 break;
             case R.id.nav_setting:
-                fragmentClass = HomeEventActivity.class;
+                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
                 break;
+
             case R.id.nav_notification:
                 fragmentClass = HomeEventActivity.class;
                 break;
 
             default:
                 fragmentClass = HomeEventActivity.class;
+
         }
 
 
@@ -157,20 +160,7 @@ public class HomeEventActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // The action bar home/up action should open or close the drawer.
-        if(drawerToggle.onOptionsItemSelected(item)){
-            return true;
-        }
 
-        switch (item.getItemId()) {
-            case R.id.nav_calendar:
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 
     public void searchOnMap(MenuItem v){
         Intent i = new Intent(this,SearchOnMapActivity.class);

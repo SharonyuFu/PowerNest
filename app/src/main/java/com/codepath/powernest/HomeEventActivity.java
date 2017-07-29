@@ -125,7 +125,8 @@ public class HomeEventActivity extends AppCompatActivity {
                 startActivity(i);
                 break;
             case R.id.nav_calendar:
-                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
+                Intent j = new Intent(this,CalendarActivity.class);
+                startActivity(j);
                 break;
             case R.id.nav_group:
                 Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();

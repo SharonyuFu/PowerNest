@@ -27,7 +27,6 @@ public class PowerRushActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
     private NavigationView nvDrawer;
     private ActionBarDrawerToggle drawerToggle;
-    private CardView cdView;
     private RecyclerView rvChallen;
     private List<Challenge> challen;
     private challengeAdapter chAdapter;
@@ -59,15 +58,64 @@ public class PowerRushActivity extends AppCompatActivity {
             // Bind adapter to list
             rvChallen.setAdapter(chAdapter);
 
+            drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+            nvDrawer = (NavigationView) findViewById(R.id.nvView);
+            drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                    R.string.drawer_open, R.string.drawer_close);
+            drawerLayout.addDrawerListener(drawerToggle);
 
-
-
+            setupDrawerContent(nvDrawer);
 
         }
 
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        drawerToggle.syncState();
+    }
+
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        selectDrawerItem(menuItem);
+                        return true;
+                    }
+                });
+    }
+
+    public void selectDrawerItem(MenuItem menuItem) {
+        // Create a new fragment and specify the fragment to show based on nav item clicked
+
+        switch(menuItem.getItemId()) {
+
+            case R.id.nav_lobby:
+                Intent i = new Intent(getApplicationContext(),HomeEventActivity.class);
+                startActivity(i);
+                break;
+            case R.id.nav_calendar:
+                Intent j = new Intent(this,CalendarActivity.class);
+                startActivity(j);
+                break;
+            case R.id.nav_group:
+                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_rush:
+                Intent in = new Intent(this,PowerRushActivity.class);
+                startActivity(in);
+                break;
+            case R.id.nav_setting:
+                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
+                break;
+        }
 
 
     }
+
 
 
 

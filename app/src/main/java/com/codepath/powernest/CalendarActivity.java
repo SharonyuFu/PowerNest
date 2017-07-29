@@ -1,14 +1,20 @@
 package com.codepath.powernest;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.powernest.fragment.StarClubFragment;
@@ -18,6 +24,9 @@ public class CalendarActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private CalendarView cdView;
     ViewPager vpPager;
+    private DrawerLayout drawerLayout;
+    private NavigationView nvDrawer;
+    private ActionBarDrawerToggle drawerToggle;
 
 
 
@@ -35,7 +44,64 @@ public class CalendarActivity extends AppCompatActivity {
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabsStrip.setViewPager(vpPager);
 
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        nvDrawer = (NavigationView) findViewById(R.id.nvView);
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
+                R.string.drawer_open, R.string.drawer_close);
+        drawerLayout.addDrawerListener(drawerToggle);
+
+        setupDrawerContent(nvDrawer);
+
+
     }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        // Sync the toggle state after onRestoreInstanceState has occurred.
+        drawerToggle.syncState();
+    }
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        selectDrawerItem(menuItem);
+                        return true;
+                    }
+                });
+    }
+
+    public void selectDrawerItem(MenuItem menuItem) {
+        // Create a new fragment and specify the fragment to show based on nav item clicked
+
+        switch(menuItem.getItemId()) {
+
+            case R.id.nav_lobby:
+                Intent i = new Intent(getApplicationContext(),HomeEventActivity.class);
+                startActivity(i);
+                break;
+            case R.id.nav_calendar:
+                Intent j = new Intent(this,CalendarActivity.class);
+                startActivity(j);
+                break;
+            case R.id.nav_group:
+                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.nav_rush:
+                Intent in = new Intent(this,PowerRushActivity.class);
+                startActivity(in);
+                break;
+            case R.id.nav_setting:
+                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+
+    }
+
+
 
     private class EventsPageAdapter extends FragmentPagerAdapter {
         private String tabTitle[] =  new String[]{"Your Group","All Group"};

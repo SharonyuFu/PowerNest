@@ -15,7 +15,7 @@
         android:clickable="true"
         android:layout_marginLeft="40dp"
         card_view:cardCornerRadius="8dp"
-        card_view:cardElevation="10dp">
+        card_view:cardElevation="5dp">
 
         <LinearLayout
             android:layout_width="match_parent"

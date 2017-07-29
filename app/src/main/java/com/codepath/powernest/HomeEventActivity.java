@@ -44,7 +44,6 @@ public class HomeEventActivity extends AppCompatActivity {
                 R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(drawerToggle);
 
-
         setupDrawerContent(nvDrawer);
 
         drawerLayout.addDrawerListener(drawerToggle);
@@ -55,9 +54,6 @@ public class HomeEventActivity extends AppCompatActivity {
         vpPager.setAdapter(new EventsPageAdapter(getSupportFragmentManager()));
         PagerSlidingTabStrip tabsStrip = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         tabsStrip.setViewPager(vpPager);
-
-
-
 
 
     }

@@ -21,7 +21,8 @@
         <activity android:name=".HomeEventActivity" />
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".SearchOnMapActivity" />
-        <activity android:name=".PowerRushActivity"></activity>
+        <activity android:name=".PowerRushActivity" />
+        <activity android:name=".CalendarActivity"/>
     </application>
 
 </manifest>

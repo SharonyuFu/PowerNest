@@ -49,10 +49,6 @@ public class HomeEventActivity extends AppCompatActivity {
 
         setupDrawerContent(nvDrawer);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> master
         getSupportActionBar().setTitle("Power Lobby");
         vpPager = (ViewPager) findViewById(R.id.vpPager);
         vpPager.setAdapter(new EventsPageAdapter(getSupportFragmentManager()));
@@ -133,12 +129,8 @@ public class HomeEventActivity extends AppCompatActivity {
                 startActivity(j);
                 break;
             case R.id.nav_group:
-<<<<<<< HEAD
-                fragmentClass = PowerGroupActivity.class;
-
-=======
-                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
->>>>>>> master
+                Intent jo = new Intent (this,PowerGroupActivity.class);
+                startActivity(jo);
                 break;
             case R.id.nav_rush:
                 Intent in = new Intent(this,PowerRushActivity.class);
@@ -147,15 +139,6 @@ public class HomeEventActivity extends AppCompatActivity {
             case R.id.nav_setting:
                 Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
                 break;
-<<<<<<< HEAD
-            case R.id.nav_notification:
-                fragmentClass = HomeEventActivity.class;
-                break;
-
-            default:
-                fragmentClass = HomeEventActivity.class;
-=======
->>>>>>> master
         }
 
 

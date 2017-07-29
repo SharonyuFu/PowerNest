@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PowerRun</string>
+    <string name="app_name">Power Nest</string>
     <string name="signin">Sign In</string>
     <string name="signup">Sign Up</string>
     <string name="email">Email</string>
@@ -17,4 +17,8 @@
     <string name="sortType">Sort By Type</string>
     <string name="change">Change</string>
     <string name="filterDescript">Choose the events order</string>
+    <string name="calerdar">Power Calendar</string>
+    <string name="basic">Basic</string>
+    <string name="challengDes">Challenges for beginners. Let\'s Run!</string>
+    <string name="enter">ENTER</string>
 </resources>

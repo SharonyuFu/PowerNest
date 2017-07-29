@@ -24,8 +24,12 @@
         <activity android:name=".EventDetailActivity" />
         <activity android:name=".SearchOnMapActivity" />
         <activity android:name=".PowerRushActivity" />
+<<<<<<< HEAD
         <!-- <activity android:name=".PowerGroupActivity"></activity> -->
         <activity android:name=".GropuDetailActivity"></activity>
+=======
+        <activity android:name=".CalendarActivity"/>
+>>>>>>> master
     </application>
 
 </manifest>

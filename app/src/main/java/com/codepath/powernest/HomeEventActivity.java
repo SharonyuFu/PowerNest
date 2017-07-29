@@ -129,6 +129,7 @@ public class HomeEventActivity extends AppCompatActivity {
                 startActivity(j);
                 break;
             case R.id.nav_group:
+                fragmentClass = PowerGroupActivity.class;
                 Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.nav_rush:
@@ -138,6 +139,14 @@ public class HomeEventActivity extends AppCompatActivity {
             case R.id.nav_setting:
                 Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
                 break;
+
+            case R.id.nav_notification:
+                fragmentClass = HomeEventActivity.class;
+                break;
+
+            default:
+                fragmentClass = HomeEventActivity.class;
+
         }
 
 

@@ -11,11 +11,13 @@
             android:icon="@drawable/ic_calendar"
             android:title="Calendar" />
         <item
-            android:id="@+id/nav_group"
-            android:icon="@drawable/ic_group"
-            android:title="Power  Group" />
-
-
+            android:icon="@drawable/ic_email"
+            android:title="Group  Manager"
+            android:id="@+id/nav_group_manager"/>
+        <item
+            android:icon="@drawable/ic_time"
+            android:title="Liked  Group"
+            android:id="@+id/nav_liked_group"/>
         <item
             android:id="@+id/nav_rush"
             android:icon="@drawable/ic_flag"
@@ -24,8 +26,6 @@
             android:id="@+id/nav_setting"
             android:icon="@drawable/ic_setting"
             android:title="Setting" />
-
     </group>
-
 
 </menu>

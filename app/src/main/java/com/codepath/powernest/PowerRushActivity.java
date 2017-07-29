@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.codepath.powernest.adapter.LikedClubAdapter;
 import com.codepath.powernest.adapter.challengeAdapter;
 import com.codepath.powernest.model.Challenge;
 import com.codepath.powernest.model.User;
@@ -101,8 +102,13 @@ public class PowerRushActivity extends AppCompatActivity {
                 Intent j = new Intent(this,CalendarActivity.class);
                 startActivity(j);
                 break;
-            case R.id.nav_group:
-                Toast.makeText(this,"You are currently at your Homepage",Toast.LENGTH_SHORT).show();
+            case R.id.nav_group_manager:
+                Intent jo = new Intent(this,PowerGroupActivity.class);
+                startActivity(jo);
+                break;
+            case R.id.nav_liked_group:
+                Intent jot = new Intent(this,LikedGroupActivity.class);
+                startActivity(jot);
                 break;
             case R.id.nav_rush:
                 Intent in = new Intent(this,PowerRushActivity.class);

@@ -47,8 +47,6 @@ public class HomeEventActivity extends AppCompatActivity {
 
         setupDrawerContent(nvDrawer);
 
-        drawerLayout.addDrawerListener(drawerToggle);
-
 
         getSupportActionBar().setTitle("Power Lobby");
         vpPager = (ViewPager) findViewById(R.id.vpPager);
@@ -131,7 +129,8 @@ public class HomeEventActivity extends AppCompatActivity {
                 fragmentClass = HomeEventActivity.class;
                 break;
             case R.id.nav_group:
-                fragmentClass = HomeEventActivity.class;
+                fragmentClass = PowerGroupActivity.class;
+
                 break;
             case R.id.nav_rush:
                 fragmentClass = HomeEventActivity.class;
@@ -147,22 +146,7 @@ public class HomeEventActivity extends AppCompatActivity {
                 fragmentClass = HomeEventActivity.class;
         }
 
-        try {
-            fragment = (Fragment) fragmentClass.newInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        // Insert the fragment by replacing any existing fragment
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.other, fragment).commit();
-
-        // Highlight the selected item has been done by NavigationView
-        menuItem.setChecked(true);
-        // Set action bar title
-        setTitle(menuItem.getTitle());
-        // Close the navigation drawer
-        drawerLayout.closeDrawers();
     }
 
 

@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codepath.powernest.ProfileActivity">
+    android:orientation="vertical"
+    tools:context="com.codepath.powernest.PowerGroupActivity">
+    <!-- This LinearLayout represents the contents of the screen  -->
 
-</android.support.constraint.ConstraintLayout>
+    <!-- The ActionBar displayed at the top -->
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/profile"
+        android:id="@+id/ivProfile"/>
+
+
+    <!-- The main content view where fragments are loaded -->
+
+</LinearLayout >

@@ -178,7 +178,7 @@ public class HomeEventActivity extends AppCompatActivity {
         return true;
     }
 
-    public void Profile(MenuItem v) {
+    public void showprofile(View v) {
         Intent p = new Intent (this,ProfileActivity.class);
         startActivity(p);
 

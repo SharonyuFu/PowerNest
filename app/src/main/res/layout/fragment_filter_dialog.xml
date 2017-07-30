@@ -22,7 +22,7 @@
         android:layout_margin="20dp"
         android:textSize="25dp"
         android:textColor="@android:color/darker_gray"
-        android:text="@string/sortType" />
+        android:text="@string/sortTime" />
 
     <RadioButton
         android:id="@+id/radioButton2"
@@ -32,7 +32,7 @@
         android:layout_margin="20dp"
         android:textSize="25dp"
         android:textColor="@android:color/darker_gray"
-        android:text="@string/sortRegion" />
+        android:text="@string/sortType" />
 
     <RadioButton
         android:id="@+id/radioButton3"

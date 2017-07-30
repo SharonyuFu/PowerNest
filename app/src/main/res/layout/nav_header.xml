@@ -13,7 +13,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:srcCompat="@drawable/user_phoo"
-        android:onClick="Profile"
+        android:onClick="showprofile"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

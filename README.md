@@ -4,6 +4,7 @@
 **PowerNest** is an android app that collect and integrate running groups' information and training records for the existed runner groups and for people who intent to join the nearby road running activity or training at any time. After using "Power Nest" the runners can gain more intimacy with each other and gain a sense of belonging to "Power Nest".
 Time spent: **12** hours spent in total
 
+
 ## User Stories
 * User can login the app by creating new account or authorized by Facebook or Google.
 * After login, user can scroll through and view the recent events from his/her favorite group or nearby group.
@@ -12,22 +13,27 @@ Time spent: **12** hours spent in total
 * User can use **Power Group** to distingusih the clubs he/her manages and the clubs he/she joined.
 * User can use **Power Rush** to get more fun in our app by running different challenge.
 
+## Future Feature
+* **Contest Plateform** is designed for our business partners to help them promote thier contenst or product.
 
+## App Flow 
+Here's the flow of PowerNest:
 
+<iframe src="https://drive.google.com/file/d/0BzNYsfMf4OQReFVLUUh3NTY1M2c/preview" width="640" height="480"></iframe>
 
-## Video Walkthrough about App
+## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://imgur.com/Njg0PEr.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
+<img src='http://imgur.com/Njg0PEr.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
 
 ## Video Pitch
 
 Here's a vedio pitch by our member Joannie Huang:
 
-<img src='http://imgur.com/Njg0PEr.gif' title='Video Walkthrough' width='600' alt='Video Walkthrough' />
+<img src='http://imgur.com/Njg0PEr.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
 
 
 ## Notes

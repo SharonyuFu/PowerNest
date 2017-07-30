@@ -11,13 +11,9 @@
             android:icon="@drawable/ic_calendar"
             android:title="Calendar" />
         <item
-            android:icon="@drawable/ic_email"
-            android:title="Group  Manager"
+            android:icon="@drawable/ic_group"
+            android:title="Power  Group"
             android:id="@+id/nav_group_manager"/>
-        <item
-            android:icon="@drawable/ic_time"
-            android:title="Liked  Group"
-            android:id="@+id/nav_liked_group"/>
         <item
             android:id="@+id/nav_rush"
             android:icon="@drawable/ic_flag"

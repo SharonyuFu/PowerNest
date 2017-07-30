@@ -33,9 +33,6 @@ Here's a walkthrough of implemented user stories:
 
 Here's a vedio pitch by our member Joannie Huang:
 
-<img src='http://imgur.com/Njg0PEr.gif' title='Video Walkthrough' width='300' alt='Video Walkthrough' />
-
-
 ## Notes
 
 Describe any challenges encountered while building the app.

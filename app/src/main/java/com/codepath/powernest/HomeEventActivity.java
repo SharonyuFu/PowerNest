@@ -58,7 +58,7 @@ public class HomeEventActivity extends AppCompatActivity {
     }
 
     public class EventsPageAdapter extends FragmentPagerAdapter {
-        private String tabTitle[] =  new String[]{"Your Group","All Group"};
+        private String tabTitle[] =  new String[]{"My Group","All Group"};
 
         public EventsPageAdapter (FragmentManager fragmentManager) {
             super(fragmentManager);
@@ -131,10 +131,6 @@ public class HomeEventActivity extends AppCompatActivity {
                 Intent jo = new Intent(this,PowerGroupActivity.class);
                 startActivity(jo);
                 break;
-            case R.id.nav_liked_group:
-                Intent jot = new Intent(this,LikedGroupActivity.class);
-                startActivity(jot);
-                break;
             case R.id.nav_rush:
                 Intent in = new Intent(this,PowerRushActivity.class);
                 startActivity(in);
@@ -182,7 +178,7 @@ public class HomeEventActivity extends AppCompatActivity {
         return true;
     }
 
-    public void Profile(View view) {
+    public void Profile(MenuItem v) {
         Intent p = new Intent (this,ProfileActivity.class);
         startActivity(p);
 

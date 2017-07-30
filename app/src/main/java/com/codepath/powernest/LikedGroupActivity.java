@@ -109,10 +109,6 @@ public class LikedGroupActivity extends AppCompatActivity {
                 Intent jo = new Intent(this,PowerGroupActivity.class);
                 startActivity(jo);
                 break;
-            case R.id.nav_liked_group:
-                Intent jot = new Intent(this,LikedGroupActivity.class);
-                startActivity(jot);
-                break;
             case R.id.nav_rush:
                 Intent in = new Intent(this,PowerRushActivity.class);
                 startActivity(in);

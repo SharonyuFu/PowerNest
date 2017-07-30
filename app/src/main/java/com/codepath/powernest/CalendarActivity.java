@@ -90,10 +90,6 @@ public class CalendarActivity extends AppCompatActivity {
                 Intent jo = new Intent(this,PowerGroupActivity.class);
                 startActivity(jo);
                 break;
-            case R.id.nav_liked_group:
-                Intent jot = new Intent(this,PowerGroupActivity.class);
-                startActivity(jot);
-                break;
             case R.id.nav_rush:
                 Intent in = new Intent(this,PowerRushActivity.class);
                 startActivity(in);

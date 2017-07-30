@@ -19,7 +19,7 @@ Time spent: **12** hours spent in total
 ## App Flow 
 Here's the flow of PowerNest:
 
-<iframe src="https://drive.google.com/file/d/0BzNYsfMf4OQReFVLUUh3NTY1M2c/preview" width="640" height="480"></iframe>
+<img src='http://imgur.com/tsQRAOQ.gif' title='Video Walkthrough' width='500' alt='Video Walkthrough' />
 
 ## Video Walkthrough
 
